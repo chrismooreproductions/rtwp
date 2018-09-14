@@ -13,7 +13,7 @@
       "newline-before-return": false,
       "no-any": false,
       "no-empty-interface": false,
-      "no-import-side-effect": [true],
+      "no-import-side-effect": [false],
       "no-inferrable-types": [true, "ignore-params", "ignore-properties"],
       "no-invalid-this": [true, "check-function-in-method"],
       "no-null-keyword": false,
@@ -45,7 +45,7 @@
       "type-literal-delimiter": true,
       "typedef": [true,"parameter", "property-declaration"],
       "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case", "allow-leading-underscore"],
-
+      "jsx-no-multiline-js" : false,
       "jsx-no-lambda": false
     }
   }
