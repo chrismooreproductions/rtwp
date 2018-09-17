@@ -24,14 +24,19 @@
 
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from './components/App';
+import App from './App';
 import { Provider } from 'react-redux';
+import Routes from './Routes';
+import SweetApp from './SweetApp';
 import store from './store';
+import createHistory from 'history/createBrowserHistory';
 import './index.css';
+
+const history = createHistory();
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <Routes />
     </Provider>,
     document.getElementById('app') as HTMLElement
 );
