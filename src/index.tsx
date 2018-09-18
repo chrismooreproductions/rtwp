@@ -25,13 +25,34 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import Routes from './Routes';
-import store from './store';
+import { applyMiddleware, createStore, compose } from 'redux';
+import { reducer, State } from './reducers';
+import { createBrowserHistory } from 'history';
+import { ConnectedRouter } from 'connected-react-router';
+import { connectRouter, routerMiddleware } from 'connected-react-router';
+import App from './App';
+// import store from './store';
 import './index.css';
+import logger from 'redux-logger';
+
+const history = createBrowserHistory();
+
+const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore<State, any, any, any>(
+    connectRouter(history)(reducer), 
+    composeEnhancers(
+        applyMiddleware(
+            routerMiddleware(history),
+            logger
+        )
+    )
+);
+// export default store;
 
 ReactDOM.render(
     <Provider store={store}>
-        <Routes />
+        <App history={history}/>
     </Provider>,
     document.getElementById('app') as HTMLElement
 );

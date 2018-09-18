@@ -2,7 +2,7 @@ import * as React from 'react';
 import AddTodo from './containers/Todos/AddTodo';
 import Todos from './containers/Todos/Todos';
 
-class App extends React.Component {
+class TodosApp extends React.Component {
     render() {
         return (
             <div>

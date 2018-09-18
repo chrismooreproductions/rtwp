@@ -4,7 +4,7 @@ import {
   Route,
   RouteComponentProps
 } from 'react-router-dom';
-import App from './App';
+import TodosApp from './Todos';
 
 interface OneProps extends RouteComponentProps<any, any> {}
 const One: React.StatelessComponent<{}> = () => { console.log('page one loaded'); return(<h1>One</h1>) };
@@ -13,7 +13,7 @@ const Two: React.StatelessComponent<{}> = () => { return(<h1>Two</h1>) };
 const Routes = () =>
   <Router>
       <div>
-          <Route path="/app" component={App} />
+          <Route path="/app" component={TodosApp} />
       </div>
   </Router>
 
