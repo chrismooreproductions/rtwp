@@ -52,7 +52,8 @@ const store = createStore<State, any, any, any>(
 
 ReactDOM.render(
     <Provider store={store}>
-        <App history={history}/>
+        <App history={history} />
     </Provider>,
     document.getElementById('app') as HTMLElement
 );
+

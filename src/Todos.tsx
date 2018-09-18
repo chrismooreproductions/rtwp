@@ -14,4 +14,4 @@ class TodosApp extends React.Component {
     }
 }
 
-export default App;
+export default TodosApp;
