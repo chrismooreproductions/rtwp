@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import { State } from '../../reducers';
-import { getTodos } from '../../selectors/todos';
-import { toggleTodo } from '../../actions/todos';
+import { State } from '../../store/reducers';
+import { getTodos } from '../../store/selectors/todos';
+import { toggleTodo } from '../../store/actions/todos';
 import TodosList from '../../components/Todos/TodosList';
 import { withRouter } from 'react-router';
 

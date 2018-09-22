@@ -1,26 +1,17 @@
-import * as React from 'react'
-import { NavLink } from 'react-router-dom';
+import * as React from 'react';
+import { NavbarWrapper, StyledLink } from './styles';
 
 const NavBar = () => (
-    <div>
-        <div>
-            <NavLink 
-                activeStyle={{
-                    fontWeight: 'bold',
-                    color: 'red'
-                }} 
-                to="/another-page">
-                Other Page
-            </NavLink>
-            <NavLink 
-                activeStyle={{
-                    fontWeight: 'bold',
-                    color: 'red'
-                }} to="/app">
-                App
-            </NavLink>
-        </div>
-    </div>
+  <NavbarWrapper>
+    <StyledLink 
+        to="/another-page">
+        Other Page
+    </StyledLink>
+    <StyledLink
+        to="/app">
+        App
+    </StyledLink>
+  </NavbarWrapper>
 )
 
 export default NavBar

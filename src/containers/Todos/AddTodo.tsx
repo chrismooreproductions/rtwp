@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addTodo } from '../../actions/todos';
+import { addTodo } from '../../store/actions/todos';
 import AddTodoForm from '../../components/Todos/AddTodoForm';
 import { withRouter } from 'react-router';
 
