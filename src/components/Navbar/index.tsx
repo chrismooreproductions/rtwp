@@ -8,14 +8,15 @@ import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
-import { mailFolderListItems, otherMailFolderListItems } from './tileData';
+import MailFolderListItems from './tileData';
+import theme from '../../routes';
 
 const drawerWidth = 240;
 
 const styles = (theme: Theme) => createStyles ({
   root: {
     flexGrow: 1,
-    height: 440,
+    height: '100vh',
     zIndex: 1,
     overflow: 'hidden',
     position: 'relative',
@@ -58,9 +59,9 @@ function Navbar(props: Props) {
         }}
       >
         <div className={classes.toolbar} />
-        <List>{mailFolderListItems}</List>
+        <MailFolderListItems theme={theme}/>
         <Divider />
-        <List>{otherMailFolderListItems}</List>
+        {/* <List>{OtherMailFolderListItems}</List> */}
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
