@@ -1,48 +1,21 @@
 import * as React from 'react';
-import { createStyles, withStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import { WithStyles } from '@material-ui/core';
-import { Theme } from '@material-ui/core/styles/createMuiTheme';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
-import MailFolderListItems from './tileData';
-import theme from '../../routes';
-
-const drawerWidth = 240;
-
-const styles = (theme: Theme) => createStyles ({
-  root: {
-    flexGrow: 1,
-    height: '100vh',
-    zIndex: 1,
-    overflow: 'hidden',
-    position: 'relative',
-    display: 'flex',
-  },
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-  },
-  drawerPaper: {
-    position: 'relative',
-    width: drawerWidth,
-  },
-  content: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.default,
-    padding: theme.spacing.unit * 3,
-    minWidth: 0, // So the Typography noWrap works
-  },
-  toolbar: theme.mixins.toolbar,
-});
+import { mailFolderListItems } from './tileData';
+import { styles } from './styles';
+import { buttonDefinition, ButtonList } from './buttons';
 
 interface Props extends WithStyles<typeof styles> {}
 
-function Navbar(props: Props) {
+const Navbar = (props: Props) => {
   const { classes } = props;
-
+  
   return (
     <div className={classes.root}>
       <AppBar position="absolute" className={classes.appBar}>
@@ -59,7 +32,9 @@ function Navbar(props: Props) {
         }}
       >
         <div className={classes.toolbar} />
-        <MailFolderListItems theme={theme}/>
+        <ButtonList 
+          navbarButtons={buttonDefinition} 
+        />
         <Divider />
         {/* <List>{OtherMailFolderListItems}</List> */}
       </Drawer>

@@ -1,19 +1,29 @@
-import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import { Theme } from '@material-ui/core/styles/createMuiTheme';
+import { createStyles } from '@material-ui/core/styles';
 
-export const StyledLink = styled(NavLink)`
-  color: black;
-  font-weight: bold;
+const drawerWidth = 240;
 
-  &.active {
-    color: palevioletred;
-  }
-`;
-
-export const NavbarWrapper = styled.div`
-  display: flex;
-  padding: 15px;
-  margin: 15px;
-  justify-content: space-around;
-  border: 2px solid lightblue;
-`
+export const styles = (theme: Theme) => createStyles ({
+  root: {
+    flexGrow: 1,
+    height: '100vh',
+    zIndex: 1,
+    overflow: 'hidden',
+    position: 'relative',
+    display: 'flex',
+  },
+  appBar: {
+    zIndex: theme.zIndex.drawer + 1,
+  },
+  drawerPaper: {
+    position: 'relative',
+    width: drawerWidth,
+  },
+  content: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.default,
+    padding: theme.spacing.unit * 3,
+    minWidth: 0, // So the Typography noWrap works
+  },
+  toolbar: theme.mixins.toolbar,
+});
