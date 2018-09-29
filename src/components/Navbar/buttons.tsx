@@ -37,10 +37,6 @@ const StyledNavLink = styled(NavLink)`
   text-decoration: none;
 `;
 
-const handleClick = (tabLink: string) => {
-  console.log(tabLink);
-}
-
 const NavbarIcon = (props: NavbarIcons) => {
   const icon = props.icon;
   switch(icon) {
@@ -70,8 +66,7 @@ export const ButtonList = (props: ButtonListProps) => {
       button 
       key={button.id}
       // hack to extend ListItem props
-      { ...{ link: convertStringToCamelCase(button.role) } as any}
-      onClick={() => handleClick(convertStringToCamelCase(button.role))}>
+      { ...{ link: convertStringToCamelCase(button.role) } as any}>
       <StyledNavLink 
         to="/app"
       >
