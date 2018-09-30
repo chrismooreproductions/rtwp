@@ -1,0 +1,84 @@
+{
+  "transmission": [
+    {
+      "id": 0,
+      "title": "Transmission Sample Issue #1",
+      "occurence-rating": 6,
+      "detection-rating": 4,
+      "severity-rating": 9,
+      "occurence-description": "A discussion of the scenarios in which this failure mode may occur",
+      "detection-description": "A listing of all the relevant tests for this failure mode - could be split into physical/virual tests etc",
+      "severity-description": "Effects on the system if this failure mode occurs"
+    },
+    {
+      "id": 0,
+      "title": "Transmission Sample Issue #1",
+      "occurence-rating": 6,
+      "detection-rating": 4,
+      "severity-rating": 9,
+      "occurence-description": "A discussion of the scenarios in which this failure mode may occur",
+      "detection-description": "A listing of all the relevant tests for this failure mode - could be split into physical/virual tests etc",
+      "severity-description": "Effects on the system if this failure mode occurs"
+    }
+  ],
+  "transfer-box": [
+    {
+      "id": 0,
+      "title": "Transfer Box Sample Issue #1",
+      "occurence": 6,
+      "detection": 4,
+      "severity": 9,
+      "occurence-description": "A discussion of the scenarios in which this failure mode may occur",
+      "detection-description": "A listing of all the relevant tests for this failure mode - could be split into physical/virual tests etc",
+      "severity-description": "Effects on the system if this failure mode occurs"
+    }
+  ],
+  "propshafts": [
+    {
+      "id": 0,
+      "title": "Propshafts Sample Issue #1",
+      "occurence": 6,
+      "detection": 4,
+      "severity": 9,
+      "occurence-description": "A discussion of the scenarios in which this failure mode may occur",
+      "detection-description": "A listing of all the relevant tests for this failure mode - could be split into physical/virual tests etc",
+      "severity-description": "Effects on the system if this failure mode occurs"
+    }
+  ],
+  "halfshafts": [
+    {
+      "id": 0,
+      "title": "Halfshafts Sample Issue #1",
+      "occurence": 6,
+      "detection": 4,
+      "severity": 9,
+      "occurence-description": "A discussion of the scenarios in which this failure mode may occur",
+      "detection-description": "A listing of all the relevant tests for this failure mode - could be split into physical/virual tests etc",
+      "severity-description": "Effects on the system if this failure mode occurs"
+    }
+  ],
+  "rear-drive-unit": [
+    {
+      "id": 0,
+      "title": "Rear Drive Unit Sample Issue #1",
+      "occurence": 6,
+      "detection": 4,
+      "severity": 9,
+      "occurence-description": "A discussion of the scenarios in which this failure mode may occur",
+      "detection-description": "A listing of all the relevant tests for this failure mode - could be split into physical/virual tests etc",
+      "severity-description": "Effects on the system if this failure mode occurs"
+    }
+  ],
+  "front-drive-unit": [
+    {
+      "id": 0,
+      "title": "Front Drive Unit Sample Issue #1",
+      "occurence": 6,
+      "detection": 4,
+      "severity": 9,
+      "occurence-description": "A discussion of the scenarios in which this failure mode may occur",
+      "detection-description": "A listing of all the relevant tests for this failure mode - could be split into physical/virual tests etc",
+      "severity-description": "Effects on the system if this failure mode occurs"
+    }
+  ]
+}

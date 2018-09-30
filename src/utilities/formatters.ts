@@ -14,3 +14,12 @@ export function convertStringToCamelCase(string: StringToCamelCase) {
     return index == 0 ? match.toLowerCase() : match.toUpperCase();
   });
 }
+
+interface StringToHyphenated {
+  title?: string;
+  replace: any;
+}
+
+export function convertStringToHyphenated(string: StringToHyphenated) {
+  return string.replace(/\s/g, "-").toLowerCase();
+}

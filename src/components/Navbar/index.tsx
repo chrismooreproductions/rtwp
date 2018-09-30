@@ -1,49 +1,85 @@
 import * as React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { WithStyles } from '@material-ui/core';
+import { withRouter } from 'react-router-dom';
+import { RouteComponentProps } from "react-router";
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
-import { mailFolderListItems } from './tileData';
 import { styles } from './styles';
-import { buttonDefinition, ButtonList } from './buttons';
+import { buttonDefinition } from '../../config';
+import { ButtonList } from './buttons';
+import { History } from 'history';
+import TodosApp from '../Todos/index';
 
 interface Props extends WithStyles<typeof styles> {}
 
-const Navbar = (props: Props) => {
-  const { classes } = props;
-  
-  return (
-    <div className={classes.root}>
-      <AppBar position="absolute" className={classes.appBar}>
-        <Toolbar>
-          <Typography variant="title" color="inherit" noWrap>
-            Clipped drawer
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Drawer
-        variant="permanent"
-        classes={{
-          paper: classes.drawerPaper,
-        }}
-      >
-        <div className={classes.toolbar} />
-        <ButtonList 
-          navbarButtons={buttonDefinition} 
-        />
-        <Divider />
-        {/* <List>{OtherMailFolderListItems}</List> */}
-      </Drawer>
-      <main className={classes.content}>
-        <div className={classes.toolbar} />
-        <Typography noWrap>{'You think water moves fast? You should see ice.'}</Typography>
-      </main>
-    </div>
-  );
+type PathParamsType = {
+  system: string,
 }
 
-export default withStyles(styles)(Navbar);
+type MainContentProps = RouteComponentProps<PathParamsType> & {
+  classes: any;
+  containerClass: string;
+  toolbarClass: string;
+  history: History;
+}
+
+type ComponentProps = {
+  system: string;
+}
+
+class Navbar extends React.Component<MainContentProps> {
+
+  MainContent(props: ComponentProps) {
+    switch(props.system) {
+      case 'transmission':
+        return (
+          <div>
+            <TodosApp />
+          </div>
+        )
+        break;
+      default:
+        return (<div>There are no results to see here</div>)
+        break;
+    }
+  }
+
+  render() {
+    return (
+      <div className={this.props.classes.root}>
+        <AppBar position="absolute" className={this.props.classes.appBar}>
+          <Toolbar>
+            <Typography variant="title" color="inherit" noWrap>
+              Clipped drawer
+            </Typography>
+          </Toolbar>
+        </AppBar>
+        <Drawer
+          variant="permanent"
+          classes={{
+            paper: this.props.classes.drawerPaper,
+          }}
+        >
+          <div className={this.props.classes.toolbar} />
+          <ButtonList 
+            navbarButtons={buttonDefinition}
+            currentPage={this.props.match}
+          />
+          <Divider />
+        </Drawer>
+        <main className={this.props.classes.content}>
+          <div className={this.props.classes.toolbar}></div>
+          <this.MainContent 
+            system={this.props.match.params.system}
+          />
+        </main>
+      </div>
+    );
+  }
+}
+
+export default withRouter(withStyles(styles)(Navbar));

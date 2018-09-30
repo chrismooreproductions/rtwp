@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar';
 import { createMuiTheme } from '@material-ui/core/styles';
 import blue from '@material-ui/core/colors/blue';
 import green from '@material-ui/core/colors/green';
+import { buttonDefinition } from '../config';
 
 export const theme = createMuiTheme({
   palette: {
@@ -18,10 +19,10 @@ export const theme = createMuiTheme({
 const routes = (
   <Router>
     <div>
-      <Navbar theme={theme}/>
       <Switch>
         <Route path="/another-page" component={AnotherPage} />
         <Route path="/app" component={TodosApp} />
+        <Route path="/dfmea/:system?" component={Navbar} />
       </Switch>
     </div>
   </Router>

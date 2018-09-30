@@ -4,7 +4,7 @@
   "description": "A DFMEA Application built for Web and Electron",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently --kill-others \"yarn webpack-dev-server --open --mode=development --hot --host 0.0.0.0\" \"yarn json-server --watch dfmea-json.json --port 3004\"",
+    "start": "concurrently --kill-others \"yarn webpack-dev-server --open --mode=development --hot --host 0.0.0.0\" \"yarn json-server --watch dfmea.json --routes routes.json --port 3004\"",
     "build": "webpack --mode=development"
   },
   "author": "",
