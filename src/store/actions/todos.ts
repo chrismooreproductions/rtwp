@@ -46,6 +46,6 @@ export function toggleTodo(todoId: number): ToggleTodoAction {
 }
 
 /*
- * Define the action types her
+ * Define the action types here
  */
 export type Action = AddTodoAction | ToggleTodoAction;

@@ -8,7 +8,12 @@ import { convertStringToCamelCase, convertStringToHyphenated } from '../../utili
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { FaWrench } from 'react-icons/fa';
-import { ButtonListProps } from '../../config';
+import { ButtonListProp } from '../../config';
+
+export interface ButtonListProps {
+  navbarButtons: ButtonListProp[];
+  currentPage: any;
+}
 
 interface NavbarIcons {
   icon: string;
@@ -43,17 +48,14 @@ const NavbarIcon = (props: NavbarIcons) => {
 }
 
 export const ButtonList = (props: ButtonListProps, match: any) => {
-  console.log(props.currentPage);
-  const navbarButtons = props.navbarButtons;
+  const { navbarButtons } = props;
   const listNavbarButtons = navbarButtons.map(button => 
       <StyledNavLink 
-        to={convertStringToHyphenated(button.role)}
+        to={'/dfmea/' + convertStringToHyphenated(button.role)}
         key={button.id}
       >
         <ListItem 
-          button 
-          // hack to extend ListItem props
-          { ...{ link: convertStringToCamelCase(button.role) } as any}>
+          button>
           <NavbarIcon 
             icon={button.icon}
           />

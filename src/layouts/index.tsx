@@ -8,11 +8,12 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
-import { styles } from './styles';
-import { buttonDefinition } from '../../config';
-import { ButtonList } from './buttons';
+import { styles } from '../components/Navbar/styles';
+import { buttonDefinition } from '../config';
+import { ButtonList } from '../components/Navbar/buttons';
 import { History } from 'history';
-import TodosApp from '../Todos/index';
+import MainContent from '../containers/Dfmea/MainContent';
+import TodosApp from '../components/Todos';
 
 interface Props extends WithStyles<typeof styles> {}
 
@@ -27,26 +28,7 @@ type MainContentProps = RouteComponentProps<PathParamsType> & {
   history: History;
 }
 
-type ComponentProps = {
-  system: string;
-}
-
-class Navbar extends React.Component<MainContentProps> {
-
-  MainContent(props: ComponentProps) {
-    switch(props.system) {
-      case 'transmission':
-        return (
-          <div>
-            <TodosApp />
-          </div>
-        )
-        break;
-      default:
-        return (<div>There are no results to see here</div>)
-        break;
-    }
-  }
+class DfmeaLayout extends React.Component<MainContentProps> {
 
   render() {
     return (
@@ -73,7 +55,7 @@ class Navbar extends React.Component<MainContentProps> {
         </Drawer>
         <main className={this.props.classes.content}>
           <div className={this.props.classes.toolbar}></div>
-          <this.MainContent 
+          <MainContent 
             system={this.props.match.params.system}
           />
         </main>
@@ -82,4 +64,4 @@ class Navbar extends React.Component<MainContentProps> {
   }
 }
 
-export default withRouter(withStyles(styles)(Navbar));
+export default withRouter(withStyles(styles)(DfmeaLayout));

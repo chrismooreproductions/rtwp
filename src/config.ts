@@ -1,12 +1,7 @@
-interface ButtonListProp {
+export interface ButtonListProp {
   id: number;
   role: string;
   icon: string;
-}
-
-export interface ButtonListProps {
-  navbarButtons: ButtonListProp[];
-  currentPage: any;
 }
 
 export const buttonDefinition: ButtonListProp[] = [
